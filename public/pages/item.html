@@ -1,0 +1,55 @@
+<div class="page-header">
+	<h1>{{_id?"Alterar":"Incluir"}} Carrinho</h1>
+</div>
+<form role="form" ng-submit="salvar()" data-ng-init="buscar();">
+	<fieldset>
+    	<legend>Cliente:</legend>
+    	<div class="form-group">
+			<label>Nome</label>
+			<input type="text" ng-model="cliente.nome" class="form-control" placeholder="Entre com nome">
+		</div>
+		<div class="form-group">
+			<label>Endereço</label>
+			<input type="text" ng-model="cliente.endereco" class="form-control" placeholder="Entre com endereço">
+		</div>
+    </fieldset>
+	<fieldset>
+		<div class="row">
+			<div class="col-xs-12">
+				<button class="btn btn-primary pull-right" type="button" ng-click="incluir();">Incluir</button>
+			</div>
+		</div>
+		<div class="row">
+			<table class="table table-striped">
+			    <thead>
+			      <tr>
+			      	<th></th>
+			        <th>Id</th>
+			        <th>Nome</th>
+			        <th>Valor</th>
+			        <th>Quantidade</th>
+			        <th>Total</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			    	<tr ng-repeat="i in item" ng-click="selecionar($index);">
+			    		<td><i class="fa fa-trash-o" ng-click="remover($index);"></i></td>
+			    		<td><input type="text" ng-model="i.produto.id" class="form-control" placeholder="Entre com id"></td>
+						<td><input type="text" ng-model="i.produto.nome" class="form-control" placeholder="Entre com nome"></td>
+						<td><input type="text" ng-model="i.valor" ui-number-mask="decimal" class="form-control" placeholder="Entre a valor"></td>
+						<td><input type="text" ng-model="i.qtd" ui-number-mask="0" class="form-control" placeholder="Entre a quantidade"></td>
+						<td>{{i.qtd * i.valor | currency}}</td>
+			    	</tr>
+			    </tbody>
+			</table>
+		</div>
+	</fieldset>
+	<div class="row">
+		<div class="col-xs-1">
+			<a href="#/polls" class="btn btn-default" role="button"><span class="glyphicon glyphicon-arrow-left"></span>Voltar</a>
+		</div>
+		<div class="col-xs-1">
+			<button class="btn btn-primary pull-right" type="button" ng-click="salvar();">Confirmar</button>
+		</div>
+	</div>
+</form>

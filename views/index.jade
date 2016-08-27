@@ -1,0 +1,26 @@
+doctype html
+html(lang="en", ng-app="Cart")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no")
+		title Polls
+		link(rel="stylesheet" href="../assets/bower/bootstrap-css-only/css/bootstrap.css")
+		link(rel="stylesheet" href="../assets/bower/font-awesome/css/font-awesome.css")
+		link(rel="stylesheet" href="../assets/css/style.css")
+		script(src="../assets/bower/angular/angular.js")
+		script(src="../assets/bower/angular-resource/angular-resource.min.js")
+		script(src="../assets/bower/angular-route/angular-route.js")
+		script(src="../assets/bower/angular-input-masks/angular-input-masks.br.min.js")
+		script(src="../assets/bower/angular-i18n/angular-locale_pt-br.js")
+		script(src="../assets/js/app.js")
+		script(src="../assets/js/service.js")
+		script(src="../assets/js/controller.js")
+		script(src="../assets/js/config.js")
+	body
+		nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+			div.navbar-header
+				a.navbar-brand(href="#/cart") Carrinho compras
+		div.container
+			div(ng-view)
+				
+	

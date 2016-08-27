@@ -1,0 +1,26 @@
+<div class="row" data-ng-init="buscar();">
+	<br>
+	<div class="row">
+		<div class="col-xs-12">
+			<button class="btn btn-primary pull-right" type="button" ng-click="novo();">Novo</button>
+		</div>
+		<div class="col-xs-12">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Cliente</th>
+						<th>Endereço</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="i in carrinho" ng-click="selecionar($index);">
+						<td><i class="fa fa-trash-o" ng-click="excluir($index);"></i></td>
+						<td>{{i.cliente.nome}}</td>
+						<td>{{i.cliente.endereco}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

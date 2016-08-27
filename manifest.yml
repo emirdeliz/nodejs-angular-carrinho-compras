@@ -1,0 +1,15 @@
+---
+applications:
+- name: carrinhoapp
+  mem: 256M
+  instances: 1
+  host: carrinhoapp-${random-word}
+  domain: mybluemix.net
+  path: .
+  command: node app.js
+  services:
+     mongodb-carrinhoapp: #Identifier for Mongodb Bound Service instance
+      label: mongodb
+      provider: core
+      version: '2.2'
+      plan: '100'
